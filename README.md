@@ -96,7 +96,13 @@ app.listen(port, ()=>{
 
 ### ***`GET API:`***
 - #### **PARAMS:**
-  Dynamic pathName.
+  Dynamic pathName. Sometimes we need to show data at the dynamic routes. So, we need to fetch the data dynamically. `params` returns the dynamic pathname which is dynamically called from the frontend. To get the pathname we have to write: 
+  ```js
+  app.get('/blog/:id', async(req, res)=>{
+    // above /:id reffers dynamic pathname.
+  const id = req.params
+  })
+  ```
 - #### **QUERY:**
   If we need to find data with single or multiple parameter we can use `query`. If we pass `query` from frontend fetch we will find it in express 
   ```js
