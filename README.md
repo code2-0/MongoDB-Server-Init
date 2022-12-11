@@ -93,3 +93,21 @@ app.listen(port, ()=>{
   console.log('Server is Running!!');
 })
 ```
+
+### ***`GET API:`***
+- #### **PARAMS:**
+  Dynamic pathName.
+- #### **QUERY:**
+  If we need to find data with single or multiple parameter we can use `query`. If we pass `query` from frontend fetch we will find it in express 
+  ```js
+   req.query
+   ```
+
+### ***`POST API:`***
+- #### **BODY:**
+
+### ***`PUT API:`***
+
+### ***`DELETE API:`***
+
+### ***`UPSERT API:`***
