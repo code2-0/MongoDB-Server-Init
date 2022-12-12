@@ -94,7 +94,16 @@ app.listen(port, ()=>{
 })
 ```
 
-### ***`GET API:`***
+### ***`GET REQUEST API:`***
+`GET` is *API* request method. To fetch or load data from server we have to have a `get` method. We can load all data of a database collection, limited number of data or a specific data by `get` method. Code:
+```js
+  app.get('/path_name/:dynamic_route', async(req, res) => {
+    const result = await collectionName.find({}).toArray();
+    // empty object ({}) is use inside find() to get all data of this collection
+    //.toArray() is called to put all data in an array.
+    res.json(result);
+  })
+```
 - #### **PARAMS:**
   Dynamic pathName. Sometimes we need to show data at the dynamic routes. So, we need to fetch the data dynamically. `params` returns the dynamic pathname which is dynamically called from the frontend. To get the pathname we have to write: 
   ```js
@@ -104,16 +113,21 @@ app.listen(port, ()=>{
   })
   ```
 - #### **QUERY:**
-  If we need to find data with single or multiple parameter we can use `query`. If we pass `query` from frontend fetch we will find it in express 
+  If we need to find data with single or multiple parameter we can use `query`. If we pass `query` from frontend fetch we will find it in express. `req.query` returns an object, which have those propertis and values passed from frontend `get` request.
   ```js
    req.query
    ```
+- #### **SORT():**
+- #### **LIMIT():**
+- #### **TOARRAY():**
 
-### ***`POST API:`***
+
+
+### ***`POST REQUEST API:`***
 - #### **BODY:**
 
-### ***`PUT API:`***
+### ***`PUT REQUEST API:`***
 
-### ***`DELETE API:`***
+### ***`DELETE REQUEST API:`***
 
-### ***`UPSERT API:`***
+### ***`UPSERT REQUEST API:`***
